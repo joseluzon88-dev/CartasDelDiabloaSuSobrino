@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartas del Diablo a su Sobrino</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,700;1,400&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="course-container">
+        <header>
+            <div class="header-spacer"></div>
+            <div class="title-container">
+                <h1>Cartas del Diablo a su Sobrino</h1>
+                <h2 class="author-subtitle">por C.S. Lewis</h2>
+            </div>
+            <div id="progress-container">
+                <div id="progress-bar-container">
+                    <div id="progress-bar"></div>
+                </div>
+                <span id="progress-text">0%</span>
+            </div>
+        </header>
+
+        <div id="content-wrapper">
+            <nav id="sidebar">
+                <button id="home-from-sidebar-btn" class="sidebar-btn"><i class="fa-solid fa-house"></i> Ir al Inicio</button>
+                <hr class="sidebar-divider">
+                <h2>Módulos</h2>
+                <div id="module-buttons">
+                    <!-- Los botones de los módulos se generarán aquí -->
+                </div>
+            </nav>
+            <main id="main-content">
+                <div id="module-selection">
+                    <div id="preamble-container">
+                        <img id="main-image" src="images/main.jpg" alt="Ilustración de la historia">
+                        <p class="preamble-text">La historia presenta una serie de cartas escritas por un demonio de alto rango llamado Escrutopo a su sobrino y aprendiz, Orugario. En estas cartas, Escrutopo instruye a Orugario sobre los métodos más efectivos para tentar a un humano, conocido como "el paciente", y asegurar la condenación de su alma.</p>
+                        <audio id="preamble-audio" src="audio/preamble.mp3" controls></audio>
+                    </div>
+                    <hr>
+                </div>
+    
+                <div id="module-view" class="hidden">
+                    <h2 id="module-title"></h2>
+                    <img id="module-image" src="" alt="Ilustración del módulo">
+                    <div id="module-summary"></div>
+                    <div id="audio-container">
+                        <p><strong>Audio del Módulo:</strong></p>
+                        <audio id="module-audio" controls></audio>
+                    </div>
+                    <div class="module-actions">
+                        <button id="home-from-module-btn"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</button>
+                        <button id="start-quiz-btn"><i class="fa-solid fa-scroll"></i> Demuestra tu astucia</button>
+                    </div>
+                </div>
+    
+                <div id="quiz-view" class="hidden">
+                    <div class="quiz-header">
+                        <h2 id="quiz-title"></h2>
+                        <button id="exit-test-btn"><i class="fa-solid fa-xmark"></i> Volver al Inicio</button>
+                    </div>
+                    <p id="question-progress"></p>
+                    <div id="question-container">
+                        <!-- El contenido se generará dinámicamente aquí -->
+                    </div>
+                    <div id="feedback-container" class="hidden"></div>
+                    <button id="next-question-btn" class="hidden">Siguiente Pregunta <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+    
+                <div id="modal-overlay" class="hidden">
+                    <div id="modal-content">
+                        <button id="modal-close-btn" class="modal-close-btn">&times;</button>
+                        <p id="quiz-result-message"></p>
+                        <div id="chart-container" style="position: relative; height: 250px; width: 100%; margin-bottom: 20px;">
+                            <canvas id="results-chart"></canvas>
+                        </div>
+                        <div class="module-actions">
+                            <button id="retry-quiz-btn" class="hidden"><i class="fa-solid fa-rotate-right"></i> Volver a Intentarlo</button>
+                            <button id="back-to-modules-btn"><i class="fa-solid fa-arrow-left"></i> Continuar</button>
+                        </div>
+                        <button id="final-screen-btn" class="hidden"><i class="fa-solid fa-crown"></i> Superaste la última fase</button>
+                    </div>
+                </div>
+    
+                <div id="course-complete-view" class="view hidden">
+                    <h2>Es el final del principio</h2>
+                    <img src="images/final.jpg" alt="Felicitaciones">
+                    <p>Ahora empieza el juego de verdad.<br>Sin ayuda.<br>Sin guías..<br>Nos vemos ahí afuera..</p>
+                    <audio src="audio/final.mp3" controls></audio>
+                    <hr>
+                    <button id="home-from-final-btn"><i class="fa-solid fa-house"></i> Volver al Inicio</button>
+                </div>
+            </main>
+        </div>
+
+        <footer>
+            <div id="medals-container">
+                <h3>Medallas Obtenidas</h3>
+                <div id="medals-list">
+                    <!-- Las medallas se mostrarán aquí -->
+                </div>
+            </div>
+            <button id="reset-btn"><i class="fa-solid fa-trash-can"></i> Reiniciar Progreso</button>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
